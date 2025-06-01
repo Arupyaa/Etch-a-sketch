@@ -8,8 +8,10 @@ let gridSize = 16;
 matrixInitialize(gridSize);
 
 
-function onHover(target) {
-    target.style.background = "green";
+function onHover(e,target) {
+    if(e.buttons == 1)
+        target.style.background = "green";
+    
 }
 
 function matrixInitialize(gridSize) {
@@ -27,7 +29,7 @@ function matrixInitialize(gridSize) {
             canvasRowMatrix[x].appendChild(cell);
             canvasMatrix.push(cell);
 
-            cell.addEventListener("mouseenter", function (e) { onHover(e.target) });
+            cell.addEventListener("mouseenter", function (e) { onHover(e,e.target) });
 
         }
     }
