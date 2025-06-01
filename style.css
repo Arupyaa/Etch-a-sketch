@@ -1,22 +1,47 @@
-body
-{
+body {
     background-color: brown;
+    display: flex;
+    margin: 0;
+    gap: 20px;
+
 }
-#canvas{
+
+#canvas {
     display: flex;
     flex-direction: column;
     width: 800px;
     height: 800px;
     margin: 80px auto;
+    flex: 0 1 auto;
 }
 
-.canvasRow{
-flex: 1;
-display: flex;
+.canvasRow {
+    flex: 1;
+    display: flex;
 
 }
 
-.canvasCell{
-flex: 1;
-background-color: white;
+.canvasCell {
+    flex: 1;
+    background-color: white;
+}
+
+#button-container {
+    display: flex;
+    flex-direction: column;
+
+}
+
+#reset,
+#new-canvas {
+    flex: 0 1 auto;
+    background-color: #E2DFD2;
+    color: black;
+    padding: 30px 60px;
+    margin-top: 40px;
+    margin-right: 10px;
+    border-radius: 10px;
+    font-size: 32px;
+    font-weight: bold;
+
 }
