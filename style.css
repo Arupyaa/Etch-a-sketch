@@ -1,0 +1,22 @@
+body
+{
+    background-color: brown;
+}
+#canvas{
+    display: flex;
+    flex-direction: column;
+    width: 800px;
+    height: 800px;
+    margin: 80px auto;
+}
+
+.canvasRow{
+flex: 1;
+display: flex;
+
+}
+
+.canvasCell{
+flex: 1;
+background-color: white;
+}
