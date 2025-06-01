@@ -1,12 +1,14 @@
 const canvas = document.querySelector("#canvas");
+const button_reset = document.querySelector("#reset");
+const button_new = document.querySelector("#new-canvas");
 let canvasMatrix = [];
 let canvasRowMatrix = [];
+let gridSize = 16;
 
-matrixInitialize(16);
+matrixInitialize(gridSize);
 
 
-function onHover(target)
-{
+function onHover(target) {
     target.style.background = "green";
 }
 
@@ -25,8 +27,31 @@ function matrixInitialize(gridSize) {
             canvasRowMatrix[x].appendChild(cell);
             canvasMatrix.push(cell);
 
-            cell.addEventListener("mouseenter",function(e){onHover(e.target)});
+            cell.addEventListener("mouseenter", function (e) { onHover(e.target) });
 
         }
     }
 }
+
+function matrixDelete() {
+    for (let x = 0; x < gridSize; x++) {
+        for (let y = 0; y < gridSize; y++) {
+            let cell = canvasMatrix.pop();
+            cell.remove();
+        }
+        let row = canvasRowMatrix.pop();
+        row.remove();
+    }
+}
+
+function matrixReset() {
+    for (let x = 0; x < gridSize; x++) {
+        for (let y = 0; y < gridSize; y++) {
+            let cell = canvasMatrix[(x * gridSize) + y];
+            cell.style.background = "white";
+
+        }
+    }
+}
+
+button_reset.addEventListener("click", matrixReset);
