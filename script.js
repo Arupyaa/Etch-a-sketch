@@ -54,4 +54,14 @@ function matrixReset() {
     }
 }
 
+function newMatrix() {
+    let newGridSize = Number(prompt("Enter new canvas grid size: ", "16"));
+    if(newGridSize ==0)
+        return
+    matrixDelete();
+    gridSize = newGridSize;
+    matrixInitialize(gridSize);
+}
+
 button_reset.addEventListener("click", matrixReset);
+button_new.addEventListener("click", newMatrix);
