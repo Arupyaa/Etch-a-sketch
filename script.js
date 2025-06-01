@@ -56,9 +56,11 @@ function matrixReset() {
 
 function newMatrix() {
     let newGridSize = Number(prompt("Enter new canvas grid size: ", "16"));
-    if(newGridSize ==0)
+    if (newGridSize <= 0 || isNaN(newGridSize))
         return
     matrixDelete();
+    if(newGridSize>=100)
+        newGridSize=100;
     gridSize = newGridSize;
     matrixInitialize(gridSize);
 }
