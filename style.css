@@ -6,12 +6,20 @@ body {
 
 }
 
+h1{
+    text-align: center;
+    font-size: 50px;
+    color: plum;
+    text-shadow: 3px 3px rosybrown;
+    margin: 0;
+}
+
 #canvas {
     display: flex;
     flex-direction: column;
     width: 800px;
     height: 800px;
-    margin: 80px auto;
+    margin: 0px auto;
     flex: 0 1 auto;
 }
 
